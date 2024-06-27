@@ -1,0 +1,162 @@
+.main {
+
+    &__title {
+        font-size: 3rem;
+        color: var(--textColor);
+        position: relative;
+        margin: 60px 0 20px 0;
+        max-width: 400px;
+        width: max-content;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 6px;
+            height: 4px;
+            width: 192px;
+            border-radius: 10px;
+            background: var(--PrimaryColor);
+        }
+    }
+
+    &__content {
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    &__item {
+        background: var(--cardBG);
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+        transition: all 0.6s ease;
+
+        &:hover {
+            background: var(--whiteColor);
+        }
+
+        &--title {
+            font-size: 2rem;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        transition: all 0.6s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        padding: 25px;
+    }
+
+    &__location {
+        gap: 5px;
+
+        .icon {
+            color: var(--blackColor);
+            font-size: 2rem;
+        }
+    }
+
+    &__fees {
+        padding: 10px;
+        border-top: 1.5px solid var(--greyText);
+        border-bottom: 1.5px solid var(--greyText);
+        justify-content: space-between;
+        margin: 10px 0;
+
+        .grade {
+            max-width: 100px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            small {
+                background: var(--gradientColor);
+                padding: 1px 10px;
+                border-radius: 45px;
+                color: var(--whiteColor);
+                font-size: 1rem;
+                margin-left: 5px;
+            }
+        }
+
+        .price {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__descr {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        overflow: hidden;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+    }
+}
+
+@media (max-width: 992px) {
+    .main {
+        font-size: 1.4rem;
+
+        &__content {
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+        }
+
+        &__item {
+
+            &--title {
+                font-size: 1.6rem;
+            }
+        }
+
+        &__fees {
+
+            .price {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 562px) {
+    .main {
+
+        &__title {
+            font-size: 2rem;
+
+
+            &::after {
+                bottom: 3px;
+                width: 130px;
+            }
+        }
+
+        &__content {
+            grid-template-columns: 1fr;
+        }
+
+        &__descr {
+            font-size: 1.2rem;
+        }
+
+    }
+}
